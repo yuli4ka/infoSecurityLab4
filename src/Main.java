@@ -11,15 +11,9 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        checkNumber(5, 20);
-        checkNumber(6, 20);
-        checkNumber(7, 20);
-        checkNumber(8, 20);
-        checkNumber(9, 20);
-        checkNumber(10, 20);
-        checkNumber(11, 20);
-        checkNumber(12, 20);
-
+        for (int i = 2; i < 100; i++) {
+            checkNumber(i, 20);
+        }
     }
 
 }
