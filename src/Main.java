@@ -19,6 +19,7 @@ public class Main {
         checkNumber(10, 20);
         checkNumber(11, 20);
         checkNumber(12, 20);
+
     }
 
 }
