@@ -3,13 +3,7 @@ import java.math.BigInteger;
 class MileraRabinaTest {
 
     public static void main(String[] args) {
-        aInTModNTest();
         getRandomTest();
-    }
-
-    static void aInTModNTest() {
-        assert MileraRabina.aInTModN(BigInteger.valueOf(2), BigInteger.valueOf(3), BigInteger.valueOf(2)).equals(BigInteger.ZERO);
-        assert MileraRabina.aInTModN(BigInteger.valueOf(2), BigInteger.valueOf(5), BigInteger.valueOf(10)).equals(BigInteger.TWO);
     }
 
     static void getRandomTest() {

@@ -1,12 +1,9 @@
 import java.math.BigInteger;
 import java.util.Random;
 
+import static java.math.BigInteger.*;
+
 public class MileraRabina {
-
-    private static final BigInteger ZERO = BigInteger.ZERO;
-    private static final BigInteger ONE = BigInteger.ONE;
-    private static final BigInteger TWO = BigInteger.TWO;
-
 
     public static boolean compositeNumber(BigInteger n, int k) {
         if (n.compareTo(BigInteger.valueOf(4)) < 0) {
@@ -28,12 +25,12 @@ public class MileraRabina {
         A:
         for (int i = 0; i < k; i++) {
             BigInteger a = getRandom(TWO, n.subtract(TWO));
-            BigInteger x = aInTModN(a, t, n);
+            BigInteger x = a.modPow(t,n);
             if (x.equals(ONE) || x.equals(n.subtract(ONE))) {
                 continue;
             }
             for (BigInteger j = ZERO; j.compareTo(s.subtract(ONE)) < 0; j = j.add(ONE)) {
-                x = aInTModN(x, TWO, n);
+                x = x.modPow(TWO, n);
                 if (x.equals(ZERO)) {
                     return true;
                 }
@@ -45,15 +42,6 @@ public class MileraRabina {
         }
 
         return false;
-    }
-
-    //  (a^t) mod n
-    public static BigInteger aInTModN(BigInteger a, BigInteger t, BigInteger n) {
-        BigInteger ans = ONE;
-        for (BigInteger i = ONE; i.compareTo(t) <= 0; i = i.add(ONE)) {
-            ans = ans.multiply(a).mod(n);
-        }
-        return ans;
     }
 
     //    number from [2, n-2]
