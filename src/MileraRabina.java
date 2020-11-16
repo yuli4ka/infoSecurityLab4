@@ -51,9 +51,9 @@ public class MileraRabina {
     public static BigInteger aInTModN(BigInteger a, BigInteger t, BigInteger n) {
         BigInteger ans = ONE;
         for (BigInteger i = ONE; i.compareTo(t) <= 0; i = i.add(ONE)) {
-            ans = ans.multiply(a);
+            ans = ans.multiply(a).mod(n);
         }
-        return ans.mod(n);
+        return ans;
     }
 
     //    number from [2, n-2]
